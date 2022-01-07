@@ -1,0 +1,7 @@
+{
+  "name": "sliding-tabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
