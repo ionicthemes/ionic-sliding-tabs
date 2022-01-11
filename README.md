@@ -1,5 +1,10 @@
 # Ionic Sliding Tabs
 
+Example of how to implement sliding tabs in Ionic.
+This project uses Ionic 6 and Angular 13.
+
+- [Demo]()
+- [More Ionic Freebies](https://ionicthemes.com/templates/category/freebies)
 
 ## Icons attribution
 
