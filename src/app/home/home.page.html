@@ -1,20 +1,110 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <!-- <ion-title>
+        Categories
+    </ion-title> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="segment-wrapper">
+    <section>
+      <ion-segment class="categories-segment" (ionChange)="segmentChanged($event)" scrollable [value]="segmentValue">
+        <ion-segment-button value="food">
+          <div>
+            <img class="category-img" src="assets/category-icons/food.png">
+            <ion-label class="category-title">Food</ion-label>
+          </div>
+        </ion-segment-button>
+        <ion-segment-button value="pharmacy">
+          <div>
+            <img class="category-img" src="assets/category-icons/pharmacy.png">
+            <ion-label class="category-title">Pharmacy</ion-label>
+          </div>
+        </ion-segment-button>
+        <ion-segment-button value="pets">
+          <div>
+            <img class="category-img" src="assets/category-icons/pets.png">
+            <ion-label class="category-title">Pets</ion-label>
+          </div>
+        </ion-segment-button>
+        <ion-segment-button value="fresh">
+          <div>
+            <img class="category-img" src="assets/category-icons/fresh.png">
+            <ion-label class="category-title">Fresh</ion-label>
+          </div>
+        </ion-segment-button>
+        <ion-segment-button value="drinks">
+          <div>
+            <img class="category-img" src="assets/category-icons/drinks.png">
+            <ion-label class="category-title">Drinks</ion-label>
+          </div>
+        </ion-segment-button>
+      </ion-segment>
+    </section>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+  <div class="page-content">
+    <section [hidden]="segmentValue !== 'food'">
+      <ion-card *ngFor="let n of [1,2,3,4]; let i = index">
+        <ion-card-header>
+          <ion-card-subtitle>Card {{n}}</ion-card-subtitle>
+          <ion-card-title>FOOD</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Keep close to Nature's food... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <section [hidden]="segmentValue !== 'pharmacy'">
+      <ion-card *ngFor="let n of [1,2]; let i = index">
+        <ion-card-header>
+          <ion-card-subtitle>Card {{n}}</ion-card-subtitle>
+          <ion-card-title>PHARMACY</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Keep close to Nature's food... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <section [hidden]="segmentValue !== 'pets'">
+      <ion-card *ngFor="let n of [1,2,3,4,5]; let i = index">
+        <ion-card-header>
+          <ion-card-subtitle>Card {{n}}</ion-card-subtitle>
+          <ion-card-title>PETS</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Keep close to Nature's food... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <section [hidden]="segmentValue !== 'fresh'">
+      <ion-card *ngFor="let n of [1]; let i = index">
+        <ion-card-header>
+          <ion-card-subtitle>Card {{n}}</ion-card-subtitle>
+          <ion-card-title>FRESH</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Keep close to Nature's food... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+    </section>
+    <section [hidden]="segmentValue !== 'drinks'">
+      <ion-card *ngFor="let n of [1,2,3]; let i = index">
+        <ion-card-header>
+          <ion-card-subtitle>Card {{n}}</ion-card-subtitle>
+          <ion-card-title>DRINKS</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Keep close to Nature's food... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        </ion-card-content>
+      </ion-card>
+    </section>
   </div>
 </ion-content>

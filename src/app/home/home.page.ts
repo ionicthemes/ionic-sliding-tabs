@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  segmentValue = 'food';
+
   constructor() {}
 
+  segmentChanged(ev): void {
+    this.segmentValue = ev.detail.value;
+  }
 }
